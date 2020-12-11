@@ -23,5 +23,5 @@ stages:
     - task: Docker@2
       displayName: Build Docker
       inputs:
-        command: build-t sbl_docs .
+        command: build -t sbl_docs .
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
