@@ -28,7 +28,7 @@ stages:
 
     - script: |
         sudo mkdir -p build publish
-        chmod 777 build publish
-        touch publish/.nojekyll
+        sudo chmod 777 build publish
+        sudo touch publish/.nojekyll
         make publish BUILDDIR=/docs/build PUBLISHDIR=/docs/publish
       displayName: "Make"
