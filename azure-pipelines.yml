@@ -28,3 +28,6 @@ stages:
 
     - script: make html
       displayName: "Make"
+
+    - script: touch ./build/html/.nojekyll
+      displayName: "Create nojekyll file"
