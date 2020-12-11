@@ -26,5 +26,9 @@ stages:
     - script: pip install sphinx==1.8.1 docutils==0.14 sphinx-rtd-theme==0.4.2 sphinxcontrib-websupport==1.1.0
       displayName: "Install Python Requirements"
 
-    - script: make html
+    - script: |
+        mkdir -p build publish
+        chmod 777 build publish
+        touch publish/.nojekyll
+        make publish BUILDDIR=/docs/build PUBLISHDIR=/docs/publish
       displayName: "Make"
