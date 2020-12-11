@@ -30,5 +30,5 @@ stages:
         sudo mkdir -p build publish
         sudo chmod 777 build publish
         sudo touch publish/.nojekyll
-        sudo make publish BUILDDIR=/docs/build PUBLISHDIR=/docs/publish
+        sudo make html
       displayName: "Make"
