@@ -30,4 +30,12 @@ stages:
       displayName: "Make"
 
     - script: touch ./build/html/.nojekyll
-      displayName: "Create nojekyll file"
+      displayName: "Create nojekyll file"      
+    - task: InstallSSHKey@0
+      inputs:
+        sshPublicKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDlXlpDF/jsSdbgc3ajVy9s5TbiY4QD92oLuwTQOe+K4Ug9C4jNkwgAn6RKNPusAZAlPFXrmGV2Yf6fgvaMJ/Fp/scOZ6XEiGrJnFX7NCRxDP2jH/5nlVWZco0LhujcFalwDAalYiBq9jYcjlfvutzWZup5pJKPN8ytAEkAvgLHFlg0DnN/WUPs9OEiukZ/WC/gDP//l9gh0bInT74YqRciZAw26jdNbouRAH3GqRG0j5gnNRfSLzO/YEVD3uUzBOaCyofsFC83bN2RwTwvmxq0z2uZpb6iakmP+lm9tlevU9xTwZsRUMisBW/JCb+YWQYPED0N49reFzW3dbs7VlAy0F1js+yexbTOZ7mDmFA4LWGGMAPKOf2cmMJuZLAqxkFdOZ6NFVQjA2bBUDXnLGIZ02zTfVJcJ5J9MrMhfn2X3C+K4jCZAI/JN9QAFTAX89JQCAfWTTRUEUuIxuk77ts1q8LoCF0PExqDYHSPFa5b6DdrNAE8yyyEcD5S788NBdU= rprangar@rprangar-DESK
+        sshKeySecureFile: sbl_doc_deploy
+
+    - script: git push -f origin HEAD:gh-pages
+      displayName: "Pushing to GH-Pages branch"
+        
